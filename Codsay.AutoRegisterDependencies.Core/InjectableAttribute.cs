@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutoRegisterDependencies.Core
+namespace Codsay.AutoRegisterDependencies.Core
 {
     /// <summary>
     /// Lifetime of instances
@@ -30,12 +30,12 @@ namespace AutoRegisterDependencies.Core
         /// <summary>
         /// Interfaces only
         /// </summary>
-        Interfaces     = 0x0001,
+        Interfaces = 0x0001,
 
         /// <summary>
         /// Base classes only
         /// </summary>
-        BaseClasses    = 0x0010,
+        BaseClasses = 0x0010,
 
         /// <summary>
         /// Include the implementation where defines the injection
@@ -45,7 +45,7 @@ namespace AutoRegisterDependencies.Core
         /// <summary>
         /// Everything (Interfaces and base classes)
         /// </summary>
-        Everything     = Interfaces | BaseClasses | Implementation
+        Everything = Interfaces | BaseClasses | Implementation
     }
 
     /// <summary>

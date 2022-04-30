@@ -1,4 +1,4 @@
-﻿namespace AutoRegisterDependencies.Core.Container
+﻿namespace Codsay.AutoRegisterDependencies.Core.Container
 {
     /// <summary>
     /// The loader to be peformed after registering base dependencies

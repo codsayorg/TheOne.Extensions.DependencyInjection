@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace AutoRegisterDependencies.Core.Loader
+namespace Codsay.AutoRegisterDependencies.Core.Loader
 {
     /// <summary>
     /// Parameters to load

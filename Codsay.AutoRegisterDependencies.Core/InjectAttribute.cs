@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutoRegisterDependencies.Core
+namespace Codsay.AutoRegisterDependencies.Core
 {
     /// <summary>
     /// Request the container to provide instances of a dependency type

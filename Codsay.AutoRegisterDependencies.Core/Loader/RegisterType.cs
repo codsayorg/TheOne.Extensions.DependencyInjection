@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutoRegisterDependencies.Core.Loader
+namespace Codsay.AutoRegisterDependencies.Core.Loader
 {
     public class RegisterType
     {

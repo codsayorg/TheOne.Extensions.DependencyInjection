@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutoRegisterDependencies.Core.Logger
+namespace Codsay.AutoRegisterDependencies.Core.Logger
 {
     /// <summary>
     /// Minimal logger to trace for details when registering dependencies

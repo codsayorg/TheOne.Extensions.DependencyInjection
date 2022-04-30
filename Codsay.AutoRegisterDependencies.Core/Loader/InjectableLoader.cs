@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace AutoRegisterDependencies.Core.Loader
+namespace Codsay.AutoRegisterDependencies.Core.Loader
 {
     public class InjectableLoader
     {
@@ -18,7 +18,7 @@ namespace AutoRegisterDependencies.Core.Loader
                     {
                         return false;
                     }
- 
+
                     // Only accepts implementations which have defined injectable attribute
                     var customAttrs = t.GetCustomAttributes(typeof(InjectableAttribute), false);
                     if (customAttrs != null && customAttrs.Any())
@@ -38,7 +38,7 @@ namespace AutoRegisterDependencies.Core.Loader
         /// <param name="attr"></param>
         public static List<Type> AnalyzeType(Type type, out InjectableAttribute injectAttr)
         {
-            injectAttr                   = type.GetCustomAttribute<InjectableAttribute>(false);
+            injectAttr = type.GetCustomAttribute<InjectableAttribute>(false);
             var typesWithinjectAttribute = new List<Type>();
 
             if (injectAttr.Including.HasFlag(IncludingType.BaseClasses))
@@ -63,7 +63,7 @@ namespace AutoRegisterDependencies.Core.Loader
                 }
             }
 
-            if ((typesWithinjectAttribute == null || !typesWithinjectAttribute.Any()) || injectAttr.Including.HasFlag(IncludingType.Implementation))
+            if (typesWithinjectAttribute == null || !typesWithinjectAttribute.Any() || injectAttr.Including.HasFlag(IncludingType.Implementation))
             {
                 typesWithinjectAttribute.Add(type);
             }

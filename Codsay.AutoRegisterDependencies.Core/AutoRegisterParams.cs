@@ -1,6 +1,6 @@
-﻿using AutoRegisterDependencies.Core.Loader;
+﻿using Codsay.AutoRegisterDependencies.Core.Loader;
 
-namespace AutoRegisterDependencies.Core
+namespace Codsay.AutoRegisterDependencies.Core
 {
     public class AutoRegisterParams
     {

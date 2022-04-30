@@ -1,7 +1,7 @@
-﻿using AutoRegisterDependencies.Core.Container;
+﻿using Codsay.AutoRegisterDependencies.Core.Container;
 using System.Collections.Generic;
 
-namespace AutoRegisterDependencies.Core
+namespace Codsay.AutoRegisterDependencies.Core
 {
     /// <summary>
     /// The factory manager to ask for instances of types.

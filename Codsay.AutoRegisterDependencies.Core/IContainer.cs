@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AutoRegisterDependencies.Core
+namespace Codsay.AutoRegisterDependencies.Core
 {
     /// <summary>
     /// Container

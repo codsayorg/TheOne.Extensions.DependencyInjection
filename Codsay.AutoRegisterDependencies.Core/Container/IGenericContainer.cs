@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutoRegisterDependencies.Core.Container
+namespace Codsay.AutoRegisterDependencies.Core.Container
 {
     /// <summary>
     /// Generic container

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AutoRegisterDependencies.Core.Services
+namespace Codsay.AutoRegisterDependencies.Core
 {
     /// <summary>
     /// A built-in container provider, to avoid calling directly to FactoryManager as a static.

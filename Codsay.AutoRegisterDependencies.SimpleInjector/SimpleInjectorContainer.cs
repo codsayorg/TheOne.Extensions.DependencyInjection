@@ -1,7 +1,7 @@
-﻿using AutoRegisterDependencies.Core;
-using AutoRegisterDependencies.Core.Container;
-using AutoRegisterDependencies.Core.Loader;
-using AutoRegisterDependencies.Core.Logger;
+﻿using Codsay.AutoRegisterDependencies.Core;
+using Codsay.AutoRegisterDependencies.Core.Container;
+using Codsay.AutoRegisterDependencies.Core.Loader;
+using Codsay.AutoRegisterDependencies.Core.Logger;
 using SimpleInjector;
 using SimpleInjector.Advanced;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Reflection;
 using SI_Container = SimpleInjector.Container;
 
-namespace AutoRegisterDependencies.SimpleInjector
+namespace Codsay.AutoRegisterDependencies.SimpleInjector
 {
     /// <summary>
     /// The main gate to configure injector container and its confiuration.

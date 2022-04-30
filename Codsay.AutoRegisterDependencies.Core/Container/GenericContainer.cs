@@ -1,10 +1,10 @@
-﻿using AutoRegisterDependencies.Core.Loader;
-using AutoRegisterDependencies.Core.Logger;
+﻿using Codsay.AutoRegisterDependencies.Core.Loader;
+using Codsay.AutoRegisterDependencies.Core.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutoRegisterDependencies.Core.Container
+namespace Codsay.AutoRegisterDependencies.Core.Container
 {
     /// <summary>
     /// Default implementation for a container
@@ -17,7 +17,7 @@ namespace AutoRegisterDependencies.Core.Container
 
         public void RegisterDefaultType(Type type, string name)
         {
-            DefaultTypes[type] = name; 
+            DefaultTypes[type] = name;
         }
 
         public void RegisterDefaultType<T>(string name)
@@ -104,6 +104,6 @@ namespace AutoRegisterDependencies.Core.Container
         public abstract T Resolve<T>(string name) where T : class;
 
         public abstract IEnumerable<T> ResolveCollection<T>() where T : class;
-        
+
     }
 }
