@@ -1,2 +1,2 @@
 # AutoRegisterDependencies.Core
-Provide an automatically mechanism to find and register dependencies
+Provide a mechanism to automatically scan and register dependencies

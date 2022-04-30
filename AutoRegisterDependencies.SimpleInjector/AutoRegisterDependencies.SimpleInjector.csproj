@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup>
+		<PackageId>AutoRegisterDependencies.SimpleInjector</PackageId>
+		<Description>Provide a standard workflow for DI</Description>
+		<RepositoryUrl>https://github.com/codsay/AutoRegisterDependencies</RepositoryUrl>
+		<RespositoryType>.git</RespositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+	<PropertyGroup>
+		<PackageVersion>1.0.0-prerelease</PackageVersion>
+		<Authors>Hoang DANG</Authors>
+		<Copyright>Copyright (c) Hoang DANG 2022</Copyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SimpleInjector" Version="5.3.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AutoRegisterDependencies.Core\AutoRegisterDependencies.Core.csproj" />
+	</ItemGroup>
+</Project>
