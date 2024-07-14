@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
+		<LangVersion>12</LangVersion>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<PropertyGroup>
-		<PackageId>Codsay.AutoRegisterDependencies.Core</PackageId>
+		<PackageId>TheOne.Extensions.DependencyInjection</PackageId>
 		<Description>Provide a standard workflow for DI</Description>
 		<RepositoryUrl>https://github.com/codsay/Codsay.AutoRegisterDependencies</RepositoryUrl>
 		<RespositoryType>.git</RespositoryType>
@@ -15,4 +17,7 @@
 		<Copyright>Copyright (c) codsay 2022</Copyright>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Folder Include="Container\" />
+	</ItemGroup>
 </Project>
