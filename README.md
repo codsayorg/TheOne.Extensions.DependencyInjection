@@ -1,16 +1,13 @@
-# Codsay.AutoRegisterDependencies
+# TheOne.Extensions.DependencyInjection
 Provide a mechanism to automatically scan and register dependencies
 
-## Include 3 packages
+## Include 2 packages
 
-### 1. Codsay.AutoRegisterDependencies.Core
+### 1. TheOne.Extensions.DependencyInjection
 Provide common attributes, core logics
 
-### 2. Codsay.AutoRegisterDependencies.SimpleInjector
-Integrate with [SimpleInjector](https://simpleinjector.org)
-
-### 3. Codsay.AutoRegisterDependencies.DI
-Integrate with [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection)
+### 2. TheOne.Extensions.DependencyInjection.Microsoft
+Integrate with [Microsoft Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
 
 ## What
 Provide a ready-to-use DI container, including features:
@@ -18,30 +15,95 @@ Provide a ready-to-use DI container, including features:
 - Support multiple (named) implementations for the same type
 - Flexible configure default implementation
 
+## How to define services
+
 ```C#
 public interface ILogger
 {
 }
 
-@Component(name = "console")
+@Component(Name = "console")
 public class ConsoleLogger : ILogger
 {
 }
 
-@Component(name = "sentry")
-public class SentryLogger : ILogger
+@Component(Name = "database")
+public class DatabaseLogger : ILogger
 {
 }
 
 // Default logger when asking for ILogger
-@Component()
+@Component(Priority = 100)
 public class Logger : ILogger
 {
-	public Logger(@Inject("console") consoleLogger, @Inject("sentry") sentryLogger)
+	public Logger(@Inject("console") consoleLogger, @Inject("database") sentryLogger)
 	{
 	}
 }
 ```
 
-## How
-To be filled
+## How to configure
+
+```C#
+using TheOne.Extensions.DependencyInjection.Core;
+using TheOne.Extensions.DependencyInjection.Loader;
+
+// Register logging methods if needed
+LoggerFactory.LogInfo = Console.WriteLine;
+LoggerFactory.LogTrace = (func) =>
+{
+	Console.WriteLine(func());
+};
+
+// Initialize container
+var services = new ServiceCollection();
+var container = new AppContainer(services);
+
+// Look for all services of matching assemblies
+var loader = new AssemblyLoader
+{
+	Matchers = new HashSet<string>(["TheOne.Extensions.*"])
+};
+container.Configure(new AutoRegisterConfig(loader));
+
+// Verify configuration
+container.Verify();
+
+```
+
+## How to use
+
+```C#
+
+// Manual access
+
+var loggers = AppContainerManager.Container.ResolveCollection<ILogger>();
+var logger = AppContainerManager.Container.Resolve<ILogger>();
+var logger = AppContainerManager.Container.Resolve<ILogger>("database");
+
+// Simple case, ask for default logger
+
+public class TestController
+{
+	public TestController(ILogger logger)
+	{
+	}
+}
+
+// Ask for all implementations
+public class TestController
+{
+	public TestController(IEnumerable<ILogger> loggers)
+	{
+	}
+}
+
+// Ask for a specific implementation
+public class TestController
+{
+	public TestController(ILogger logger)
+	{
+	}
+}
+
+```
